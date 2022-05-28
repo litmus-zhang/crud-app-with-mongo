@@ -45,7 +45,7 @@ app.delete('/dogs/:id', async (req, res) =>
 {
     const { id } = req.params;
     const deletedDog = await Dog.findByIdAndDelete(id);
-    return res.status(200).json({ message: 'Dog deleted' });
+    return res.status(200).json(deletedDog, "Dog deleted");
 })
 
 app.get("/", async (req, res) =>
